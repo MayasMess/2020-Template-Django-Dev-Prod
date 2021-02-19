@@ -17,7 +17,10 @@ from django.contrib import admin
 from django.urls import path, include
 from landingpage.views import index
 
+
 urlpatterns = [
-    path('admin/', admin.site.urls),
     path('', index, name='index'),
+    path('admin/', admin.site.urls),
+    path('user/', include('users.urls')),
+    path('token/', include('tokens.urls'))
 ]
